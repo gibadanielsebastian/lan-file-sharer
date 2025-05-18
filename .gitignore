@@ -39,3 +39,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Next.js
+.next/
+out/
+node_modules/
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env*.local
+.env # If you have a general .env file with secrets
+
+# Python Backend
+backend/venv/
+backend/uploads/
+backend/__pycache__/
+backend/*.pyc
+backend/.env # If you have a .env file in the backend for secrets
+
+# IDE/Editor specific
+.vscode/
+.idea/
