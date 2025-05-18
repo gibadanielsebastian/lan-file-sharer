@@ -39,9 +39,27 @@ LANShare is a simple and fast file-sharing tool designed for Local Area Networks
 ├── postcss.config.js       # (or .mjs) PostCSS configuration
 ├── README.md               # This file
 └── tsconfig.json           # TypeScript configuration for Next.js
-PrerequisitesNode.js (v18.x or later recommended for Next.js)npm or yarnPython (v3.8 or later recommended)pip (Python package installer)GitGetting Started1. Clone the Repository:git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
+
+Prerequisites
+Node.js (v18.x or later recommended for Next.js)
+
+npm or yarn
+
+Python (v3.8 or later recommended)
+
+pip (Python package installer)
+
+Git
+
+Getting Started
+1. Clone the Repository:
+
+git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
 cd YOUR_REPOSITORY_NAME
-2. Setup Backend (Python Flask):cd backend
+
+2. Setup Backend (Python Flask):
+
+cd backend
 
 # Create and activate a virtual environment (recommended)
 python -m venv venv
@@ -54,18 +72,61 @@ python -m venv venv
 pip install -r requirements.txt
 
 # (The 'uploads/' directory will be created automatically by app.py if it doesn't exist)
-3. Setup Frontend (Next.js):Navigate back to the project root from the backend directory:cd ..
+
+3. Setup Frontend (Next.js):
+
+Navigate back to the project root from the backend directory:
+
+cd ..
 
 # Install Node.js dependencies
 npm install
 # or
 # yarn install
-4. Running the Application:You'll need two separate terminal windows:Terminal 1: Start the Backend Servercd backend
+
+4. Running the Application:
+
+You'll need two separate terminal windows:
+
+Terminal 1: Start the Backend Server
+
+cd backend
 # Activate virtual environment if not already active (e.g., source venv/bin/activate)
 python app.py
-The backend should start on http://0.0.0.0:5000 (or http://localhost:5000).Terminal 2: Start the Frontend Development Server# (Ensure you are in the project root directory)
+
+The backend should start on http://0.0.0.0:5000 (or http://localhost:5000).
+
+Terminal 2: Start the Frontend Development Server
+
+# (Ensure you are in the project root directory)
 npm run dev
 # or
 # yarn dev
-The frontend should start on http://localhost:3000.5. Accessing LANShare:On the host machine: Open your browser and go to http://localhost:3000.From other devices on the same LAN:Find the LAN IP address of the machine hosting the application (e.g., 192.168.1.105).Open a browser on another device and go to http://<HOST_MACHINE_LAN_IP>:3000 (e.g., http://192.168.1.105:3000).Note: Ensure your firewall on the host machine allows incoming connections on ports 3000 (for Next.js) and 5000 (for Flask) from your local network.ConfigurationUpload Limit: The maximum file upload size is configured in backend/app.py (variable MAX_CONTENT_LENGTH). Default is 1GB.Allowed Origins (CORS): The backend (backend/app.py) is configured to allow requests from the Next.js frontend. It attempts to dynamically determine the host's LAN IP. If you encounter access issues from LAN devices, you might need to adjust the allowed_origins list in backend/app.py.File StorageUploaded files are stored in the backend/uploads/ directory on the machine running the backend server. This directory is gitignored and will not be part of the repository.ContributingContributions are welcome! Please feel free to submit a Pull Request or open an Issue.*(Optional: Add a License section if you choose one,
+
+The frontend should start on http://localhost:3000.
+
+5. Accessing LANShare:
+
+On the host machine: Open your browser and go to http://localhost:3000.
+
+From other devices on the same LAN:
+
+Find the LAN IP address of the machine hosting the application (e.g., 192.168.1.105).
+
+Open a browser on another device and go to http://<HOST_MACHINE_LAN_IP>:3000 (e.g., http://192.168.1.105:3000).
+
+Note: Ensure your firewall on the host machine allows incoming connections on ports 3000 (for Next.js) and 5000 (for Flask) from your local network.
+
+Configuration
+Upload Limit: The maximum file upload size is configured in backend/app.py (variable MAX_CONTENT_LENGTH). Default is 1GB.
+
+Allowed Origins (CORS): The backend (backend/app.py) is configured to allow requests from the Next.js frontend. It attempts to dynamically determine the host's LAN IP. If you encounter access issues from LAN devices, you might need to adjust the allowed_origins list in backend/app.py.
+
+File Storage
+Uploaded files are stored in the backend/uploads/ directory on the machine running the backend server. This directory is gitignored and will not be part of the repository.
+
+Contributing
+Contributions are welcome! Please feel free to submit a Pull Request or open an Issue.
+
+*(Optional: Add a License section if you choose one,
 ```
