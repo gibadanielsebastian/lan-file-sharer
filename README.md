@@ -4,7 +4,9 @@
 
 LANShare is a simple and fast file-sharing tool designed for quick and easy transfers between devices on the same network. No internet required, just direct peer-to-peer sharing through an intuitive web interface.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ## ✨ Why LANShare?
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## ✨ Why LANShare?
 
 -   **Speed:** Significantly faster than internet-based services for local transfers.
 -   **Simplicity:** Easy-to-use web interface accessible from any device with a browser.
@@ -66,6 +68,7 @@ lan-share-project/
 ├── postcss.config.mjs      # PostCSS configuration (for Tailwind)
 ├── README.md               # This file
 └── tsconfig.json           # TypeScript configuration
+
 🚀 Getting StartedPrerequisitesNode.js (v18.x or later recommended)npm (or yarn)Python (v3.8 or later recommended)pip (Python package installer)GitInstallation & SetupClone the Repository:git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
 cd YOUR_REPOSITORY_NAME
 (Replace YOUR_USERNAME/YOUR_REPOSITORY_NAME with your actual repository URL)Setup Backend (Python Flask):cd backend
@@ -94,5 +97,15 @@ The backend should start on http://0.0.0.0:5000 (accessible via http://localhost
 npm run dev
 # or
 # yarn dev
-The frontend should start on http://localhost:3000.Accessing LANShareOn the host machine: Open your browser and go to http://localhost:3000.From other devices on the same LAN:Find the LAN IP address of the machine hosting the application (e.g., 192.168.1.105). You can usually find this in your system's network settings.Open a browser on another device (computer, phone, tablet) connected to the same Wi-Fi or LAN and go to http://<HOST_MACHINE_LAN_IP>:3000 (e.g., http://192.168.1.105:3000).Important:Ensure your firewall on the host machine allows incoming connections on ports 3000 (for Next.js frontend) and 5000 (for Flask backend) from your local network.The backend (backend/app.py) attempts to dynamically configure CORS for your LAN IP. If you face issues connecting from other devices, you might need to manually adjust the allowed_origins list in backend/app.py to include the specific IP address of your frontend development machine or a broader range if you understand the security implications.⚙️ ConfigurationUpload Limit: The maximum file upload size is configured in backend/app.py (variable MAX_CONTENT_LENGTH). Default is 1GB.Allowed File Extensions: While the backend currently allows a broad range of extensions (see ALLOWED_EXTENSIONS in backend/app.py), this can be customized for more restrictive sharing.CORS (Cross-Origin Resource Sharing): The backend is configured to allow requests from the Next.js frontend. It dynamically tries to determine the host's LAN IP. If you encounter access issues from LAN devices, ensure the allowed_origins list in backend/app.py correctly reflects the address from which the frontend is being served.🖼️ Screenshots🛣️ Potential Future Enhancements[ ] Real-time upload progress bar.[ ] Option to delete uploaded files from the interface.[ ] User authentication for private sharing.[ ] Dark mode / Light mode toggle based on system preference (already partially implemented with CSS variables).[ ] QR code generation for easy access from mobile devices.[ ] More robust error handling and user feedback.🤝 ContributingContributions are welcome! If you have ideas for improvements or bug fixes, please feel free to:Fork the repository.Create a new branch (git checkout -b feature/YourAmazingFeature).Make your changes.Commit your changes (git commit -m 'Add some AmazingFeature').Push to the branch (git push origin feature/YourAmazingFeature).Open a Pull Request.Please ensure your code adheres to the existing style and that any new dependencies are necessary and well-justified.📜 LicenseThis project is licensed under the MIT License - see the LICENSE.md file for details (if you add one).If no LICENSE.md file is present, you might want to choose one like MIT and add it. For now, you can state:"This project is currently not licensed. Feel free to use it, but be aware that no specific permissions are granted."
+The frontend should start on http://localhost:3000.
 ```
+
+## Accessing LANShare
+
+-   **On the host machine: Open your browser and go to http://localhost:3000.**
+
+-   **From other devices on the same LAN:**
+
+    -   Find the LAN IP address of the machine hosting the application (e.g., 192.168.1.105). You can usually find this in your system's network settings.
+
+    -   Open a browser on another device (computer, phone, tablet) connected to the same Wi-Fi or LAN and go to http://<HOST_MACHINE_LAN_IP>:3000 (e.g., http://192.168.1.105:3000).
